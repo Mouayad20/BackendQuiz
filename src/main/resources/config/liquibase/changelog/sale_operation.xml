@@ -1,0 +1,37 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="1" author="mouayad">
+        <createTable tableName="sale_operation">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="total" type="DOUBLE"/>
+            <column name="creation_data" type="TIMESTAMP"/>
+            <column name="client_id" type="BIGINT"/>
+            <column name="seller_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="mouayad">
+        <addForeignKeyConstraint baseColumnNames="client_id" baseTableName="sale_operation"
+                                 constraintName="FK_sale_operation_client" referencedColumnNames="id"
+                                 referencedTableName="client"/>
+        <addForeignKeyConstraint baseColumnNames="seller_id" baseTableName="sale_operation"
+                                 constraintName="FK_sale_operation_seller" referencedColumnNames="id"
+                                 referencedTableName="client"/>
+    </changeSet>
+    <changeSet id="1-data" author="mouayad" context="faker">
+        <loadData
+                file="config/liquibase/fake-data/sale_operation.csv"
+                separator=","
+                tableName="sale_operation"
+                usePreparedStatements="true">
+            <column name="id" type="BIGINT"/>
+            <column name="total" type="DOUBLE"/>
+            <column name="creation_data" type="TIMESTAMP"/>
+            <column name="client_id" type="BIGINT"/>
+            <column name="seller_id" type="BIGINT"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

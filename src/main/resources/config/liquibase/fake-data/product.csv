@@ -1,0 +1,21 @@
+id,name,category,description,price,creation_data,available_quantity,initial_quantity,publisher_id
+1,Laptop,Electronics,High-performance laptop,1500.00,2021-01-01 10:00:00,10,10,1
+2,Smartphone,Electronics,Flagship smartphone,1000.00,2021-01-02 12:00:00,20,20,1
+3,Headphones,Electronics,Wireless headphones,200.00,2021-01-03 15:00:00,30,30,2
+4,Tablet,Electronics,Portable tablet,500.00,2021-01-04 09:00:00,15,15,2
+5,TV,Electronics,Smart TV,1200.00,2021-01-05 14:00:00,25,25,3
+6,Watch,Accessories,Stylish watch,300.00,2021-01-06 11:00:00,35,35,3
+7,Speaker,Electronics,Bluetooth speaker,100.00,2021-01-07 13:00:00,40,40,4
+8,Camera,Electronics,High-resolution camera,800.00,2021-01-08 16:00:00,18,18,4
+9,Printer,Electronics,Wireless printer,150.00,2021-01-09 10:00:00,22,22,5
+10,Headset,Accessories,Noise-canceling headset,250.00,2021-01-10 12:00:00,28,28,5
+11,Keyboard,Accessories,Mechanical keyboard,80.00,2021-01-11 15:00:00,32,32,6
+12,Monitor,Electronics,Wide-screen monitor,400.00,2021-01-12 09:00:00,14,14,6
+13,Mouse,Accessories,Wireless mouse,40.00,2021-01-13 14:00:00,26,26,7
+14,Router,Electronics,High-speed router,120.00,2021-01-14 11:00:00,38,38,7
+15,Hard Drive,Electronics,External hard drive,200.00,2021-01-15 13:00:00,42,42,8
+16,Table,Home,Wooden dining table,600.00,2021-01-16 16:00:00,16,16,8
+17,Chair,Home,Ergonomic office chair,150.00,2021-01-17 10:00:00,20,20,9
+18,Sofa,Home,L-shaped sofa,800.00,2021-01-18 12:00:00,25,25,9
+19,Bed,Home,King-size bed,1000.00,2021-01-19 15:00:00,30,30,10
+20,Dresser,Home,Wooden dresser,300.00,2021-01-20 09:00:00,35,35,10

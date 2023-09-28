@@ -1,0 +1,44 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="1" author="mouayad">
+        <createTable tableName="product">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="category" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="price" type="DOUBLE"/>
+            <column name="creation_data" type="TIMESTAMP"/>
+            <column name="available_quantity" type="BIGINT"/>
+            <column name="initial_quantity" type="BIGINT"/>
+            <column name="publisher_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="mouayad">
+        <addForeignKeyConstraint baseColumnNames="publisher_id" baseTableName="product"
+                                 constraintName="FK_product_publisher" referencedColumnNames="id"
+                                 referencedTableName="client"/>
+    </changeSet>
+    <changeSet id="1-data" author="mouayad" context="faker">
+        <loadData
+                file="config/liquibase/fake-data/product.csv"
+                separator=","
+                tableName="product"
+                usePreparedStatements="true">
+            <column name="id" type="BIGINT"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="category" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="price" type="DOUBLE"/>
+            <column name="creation_data" type="TIMESTAMP"/>
+            <column name="available_quantity" type="BIGINT"/>
+            <column name="initial_quantity" type="BIGINT"/>
+            <column name="publisher_id" type="BIGINT"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>
