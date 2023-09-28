@@ -2,7 +2,9 @@ package com.mk.BackendQuiz.exception;
 
 public enum ExceptionType {
     ENTITY_NOT_FOUND("not.found"),
-    ENTITY_EXCEPTION("exception");
+    ENTITY_EXCEPTION("exception"),
+    DUPLICATE_ENTITY("duplicate"),
+    UNAUTHORIZED_ENTITY("unauthorized");
 
     String value;
 

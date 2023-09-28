@@ -32,6 +32,14 @@ public class Client {
     @Column(unique = true)
     private String mobile;
 
+    @NotNull
+    @Column(nullable = false)
+    private boolean activated = false;
+    @Size(max = 20)
+    @Column(name = "activation_key", length = 20)
+    @JsonIgnore
+    private String activationKey;
+
     @Email
     @NotNull
     @Column(unique = true)

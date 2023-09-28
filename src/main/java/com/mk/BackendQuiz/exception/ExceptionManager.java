@@ -25,7 +25,11 @@ public class ExceptionManager {
     private static RuntimeException throwException(ExceptionType exceptionType, String messageTemplate, String... args) {
         if (ExceptionType.ENTITY_NOT_FOUND.equals(exceptionType)) {
             return new EntityNotFoundException(format(messageTemplate, args));
+        } else if (ExceptionType.DUPLICATE_ENTITY.equals(exceptionType)) {
+            return new DuplicateEntityException(format(messageTemplate, args));
         } else if (ExceptionType.ENTITY_EXCEPTION.equals(exceptionType)) {
+            return new EntityException(format(messageTemplate, args));
+        } else if (ExceptionType.UNAUTHORIZED_ENTITY.equals(exceptionType)) {
             return new EntityException(format(messageTemplate, args));
         }
         return new RuntimeException(format(messageTemplate, args));
@@ -48,6 +52,18 @@ public class ExceptionManager {
 
     public static class EntityException extends RuntimeException {
         public EntityException(String message) {
+            super(message);
+        }
+    }
+
+    public static class DuplicateEntityException extends RuntimeException {
+        public DuplicateEntityException(String message) {
+            super(message);
+        }
+    }
+
+    public static class UnauthorizedEntityException extends RuntimeException {
+        public UnauthorizedEntityException(String message) {
             super(message);
         }
     }

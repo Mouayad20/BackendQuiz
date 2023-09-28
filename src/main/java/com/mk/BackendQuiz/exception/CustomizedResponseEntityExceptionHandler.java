@@ -16,14 +16,29 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
     @ExceptionHandler(ExceptionManager.EntityNotFoundException.class)
     public final ResponseEntity handleNotFoundExceptions(Exception ex, WebRequest request) {
         Response response = Response.notFound();
-        response.addErrorMsgToResponse(ex.getMessage(), ex);
+        response.addErrorMsgToResponse(ex.getMessage());
         return new ResponseEntity(response, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(ExceptionManager.EntityException.class)
     public final ResponseEntity handleEntityException(Exception ex, WebRequest request) {
         Response response = Response.exception();
-        response.addErrorMsgToResponse(ex.getMessage(), ex);
+        response.addErrorMsgToResponse(ex.getMessage());
         return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @ExceptionHandler(ExceptionManager.DuplicateEntityException.class)
+    public final ResponseEntity handleDuplicateEntityException(Exception ex, WebRequest request) {
+        Response response = Response.duplicateEntity();
+        response.addErrorMsgToResponse(ex.getMessage());
+        return new ResponseEntity(response, HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(ExceptionManager.UnauthorizedEntityException.class)
+    public final ResponseEntity handleUnauthorizedEntityException(Exception ex, WebRequest request) {
+        Response response = Response.unauthorized();
+        response.addErrorMsgToResponse(ex.getMessage());
+        return new ResponseEntity(response, HttpStatus.UNAUTHORIZED);
+    }
+
 }

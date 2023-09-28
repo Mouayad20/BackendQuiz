@@ -76,10 +76,9 @@ public class Response<T> {
         return response;
     }
 
-    public void addErrorMsgToResponse(String errorMsg, Exception ex) {
+    public void addErrorMsgToResponse(String errorMsg) {
         ResponseError error = new ResponseError()
-                .setDetails(errorMsg)
-                .setMessage(ex.getMessage())
+                .setMessage(errorMsg)
                 .setTimestamp(new Date());
         setErrors(error);
     }
