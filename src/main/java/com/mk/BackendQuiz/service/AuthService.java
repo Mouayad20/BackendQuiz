@@ -4,7 +4,6 @@ import com.mk.BackendQuiz.dto.ClientAuthDto;
 import com.mk.BackendQuiz.dto.ClientRegisterDto;
 import com.mk.BackendQuiz.dto.JwtRequest;
 import com.mk.BackendQuiz.dto.JwtResponse;
-import com.mk.BackendQuiz.dto.response.Response;
 import com.mk.BackendQuiz.exception.EntityType;
 import com.mk.BackendQuiz.exception.ExceptionManager;
 import com.mk.BackendQuiz.exception.ExceptionType;
@@ -50,12 +49,11 @@ public class AuthService implements UserDetailsService {
     private UserDetailsService jwtInMemoryUserDetailsService;
 
     public ClientRegisterDto register(ClientRegisterDto clientRegisterDto) {
-        if (clientRepository.findByMobile(clientRegisterDto.getMobile()) != null)
+        if (clientRepository.findByMobile(clientRegisterDto.getMobile()).isPresent())
             throw exception(CLIENT, DUPLICATE_ENTITY, " Mobile " + clientRegisterDto.getMobile());
-        Client client = clientRepository.findByEmail(clientRegisterDto.getEmail());
-        if (client == null) {
+        if (clientRepository.findByEmail(clientRegisterDto.getEmail()).isEmpty()) {
 
-            client = new Client()
+            Client client = new Client()
                     .setName(clientRegisterDto.getName())
                     .setLastName(clientRegisterDto.getLastName())
                     .setMobile(clientRegisterDto.getMobile())
@@ -77,8 +75,8 @@ public class AuthService implements UserDetailsService {
                     clientRepository.save(client),
                     ClientRegisterDto.class
             );
-        }
-        throw exception(CLIENT, DUPLICATE_ENTITY, " Email " + clientRegisterDto.getEmail());
+        } else
+            throw exception(CLIENT, DUPLICATE_ENTITY, " Email " + clientRegisterDto.getEmail());
     }
 
     public void activateRegistration(String key) {
@@ -96,39 +94,39 @@ public class AuthService implements UserDetailsService {
     }
 
     public Boolean setPassword(ClientAuthDto clientAuthDto) {
-        Client client = clientRepository.findByEmail(clientAuthDto.getEmail());
-        if (client == null)
+        Optional<Client> client = clientRepository.findByEmail(clientAuthDto.getEmail());
+        if (client.isEmpty())
             throw exception(CLIENT, ENTITY_NOT_FOUND, clientAuthDto.getEmail());
-        if (!clientRepository.findByEmail(clientAuthDto.getEmail()).isActivated())
+        if (!client.get().isActivated())
             throw exception(CLIENT, ENTITY_EXCEPTION, "Client " + clientAuthDto.getEmail() + " Is not active ");
-
-        client = clientRepository.save(
-                client.setPassword(
-                        bCryptPasswordEncoder.encode(clientAuthDto.getPassword()
-                        )
+        client.get().setPassword(
+                bCryptPasswordEncoder.encode(clientAuthDto.getPassword()
                 )
         );
-        return !client.getPassword().equals(clientAuthDto.getPassword());
+        Client savedClient = clientRepository.save(client.get());
+        return !savedClient.getPassword().equals(clientAuthDto.getPassword());
     }
 
     @Override
     public UserDetails loadUserByUsername(String email) {
-        Client client = clientRepository.findByEmail(email);
-        if (client == null)
+        Optional<Client> client = clientRepository.findByEmail(email);
+        if (client.isEmpty())
             throw exception(CLIENT, ENTITY_NOT_FOUND, email);
-        return new User(client.getEmail(), client.getPassword(), new ArrayList<>());
+        return new User(client.get().getEmail(), client.get().getPassword(), new ArrayList<>());
     }
 
     private RuntimeException exception(EntityType entityType, ExceptionType exceptionType, String... args) {
         return ExceptionManager.throwException(entityType, exceptionType, args);
     }
 
-    public Response authenticate(JwtRequest jwtRequest) {
+    public JwtResponse authenticate(JwtRequest jwtRequest) {
 
         if (jwtRequest.getEmail() == null || jwtRequest.getPassword() == null)
             throw exception(CLIENT, ENTITY_EXCEPTION, "Email Or Password is Null");
-
-        if (!clientRepository.findByEmail(jwtRequest.getEmail()).isActivated())
+        Optional<Client> client = clientRepository.findByEmail(jwtRequest.getEmail());
+        if (client.isEmpty())
+            throw exception(CLIENT, ENTITY_NOT_FOUND, jwtRequest.getEmail());
+        if (!client.get().isActivated())
             throw exception(CLIENT, ENTITY_EXCEPTION, "Client " + jwtRequest.getEmail() + " Is not active ");
 
         try {
@@ -143,6 +141,6 @@ public class AuthService implements UserDetailsService {
                 .loadUserByUsername(jwtRequest.getEmail());
 
         final String token = jwtTokenUtil.generateToken(userDetails);
-        return Response.ok().setPayload(new JwtResponse(token));
+        return new JwtResponse(token);
     }
 }
