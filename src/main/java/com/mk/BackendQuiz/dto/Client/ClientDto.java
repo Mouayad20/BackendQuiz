@@ -1,4 +1,4 @@
-package com.mk.BackendQuiz.dto;
+package com.mk.BackendQuiz.dto.Client;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +9,11 @@ import lombok.experimental.Accessors;
 @Setter
 @NoArgsConstructor
 @Accessors(chain = true)
-public class JwtRequest {
+public class ClientDto {
+    private Long id;
+    private String name;
+    private String lastName;
+    private String address;
+    private String mobile;
     private String email;
-    private String password;
 }

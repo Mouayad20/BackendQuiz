@@ -1,8 +1,7 @@
 package com.mk.BackendQuiz.service;
 
-import com.mk.BackendQuiz.dto.ClientAuthDto;
-import com.mk.BackendQuiz.dto.ClientRegisterDto;
-import com.mk.BackendQuiz.dto.JwtRequest;
+import com.mk.BackendQuiz.dto.Client.ClientAuthDto;
+import com.mk.BackendQuiz.dto.Client.ClientCreateDto;
 import com.mk.BackendQuiz.dto.JwtResponse;
 import com.mk.BackendQuiz.exception.EntityType;
 import com.mk.BackendQuiz.exception.ExceptionManager;
@@ -34,7 +33,7 @@ import static com.mk.BackendQuiz.exception.ExceptionType.ENTITY_EXCEPTION;
 @Service
 public class AuthService implements UserDetailsService {
     @Autowired
-    ClientRepository clientRepository;
+    private ClientRepository clientRepository;
     @Autowired
     private EmailService emailService;
     @Autowired
@@ -48,17 +47,17 @@ public class AuthService implements UserDetailsService {
     @Autowired
     private UserDetailsService jwtInMemoryUserDetailsService;
 
-    public ClientRegisterDto register(ClientRegisterDto clientRegisterDto) {
-        if (clientRepository.findByMobile(clientRegisterDto.getMobile()).isPresent())
-            throw exception(CLIENT, DUPLICATE_ENTITY, " Mobile " + clientRegisterDto.getMobile());
-        if (clientRepository.findByEmail(clientRegisterDto.getEmail()).isEmpty()) {
+    public ClientCreateDto register(ClientCreateDto clientCreateDto) {
+        if (clientRepository.findByMobile(clientCreateDto.getMobile()).isPresent())
+            throw exception(CLIENT, DUPLICATE_ENTITY, " Mobile " + clientCreateDto.getMobile());
+        if (clientRepository.findByEmail(clientCreateDto.getEmail()).isEmpty()) {
 
             Client client = new Client()
-                    .setName(clientRegisterDto.getName())
-                    .setLastName(clientRegisterDto.getLastName())
-                    .setMobile(clientRegisterDto.getMobile())
-                    .setEmail(clientRegisterDto.getEmail())
-                    .setAddress(clientRegisterDto.getAddress())
+                    .setName(clientCreateDto.getName())
+                    .setLastName(clientCreateDto.getLastName())
+                    .setMobile(clientCreateDto.getMobile())
+                    .setEmail(clientCreateDto.getEmail())
+                    .setAddress(clientCreateDto.getAddress())
                     .setActivationKey((int) Math.floor(Math.random() * (99998 - 10000 + 1) + 10000) + "")
                     .setPassword(RandomStringUtils.random(30, true, true));
 
@@ -73,10 +72,10 @@ public class AuthService implements UserDetailsService {
 
             return modelMapper.map(
                     clientRepository.save(client),
-                    ClientRegisterDto.class
+                    ClientCreateDto.class
             );
         } else
-            throw exception(CLIENT, DUPLICATE_ENTITY, " Email " + clientRegisterDto.getEmail());
+            throw exception(CLIENT, DUPLICATE_ENTITY, " Email " + clientCreateDto.getEmail());
     }
 
     public void activateRegistration(String key) {
@@ -119,18 +118,18 @@ public class AuthService implements UserDetailsService {
         return ExceptionManager.throwException(entityType, exceptionType, args);
     }
 
-    public JwtResponse authenticate(JwtRequest jwtRequest) {
+    public JwtResponse authenticate(ClientAuthDto clientAuthDto) {
 
-        if (jwtRequest.getEmail() == null || jwtRequest.getPassword() == null)
+        if (clientAuthDto.getEmail() == null || clientAuthDto.getPassword() == null)
             throw exception(CLIENT, ENTITY_EXCEPTION, "Email Or Password is Null");
-        Optional<Client> client = clientRepository.findByEmail(jwtRequest.getEmail());
+        Optional<Client> client = clientRepository.findByEmail(clientAuthDto.getEmail());
         if (client.isEmpty())
-            throw exception(CLIENT, ENTITY_NOT_FOUND, jwtRequest.getEmail());
+            throw exception(CLIENT, ENTITY_NOT_FOUND, clientAuthDto.getEmail());
         if (!client.get().isActivated())
-            throw exception(CLIENT, ENTITY_EXCEPTION, "Client " + jwtRequest.getEmail() + " Is not active ");
+            throw exception(CLIENT, ENTITY_EXCEPTION, "Client " + clientAuthDto.getEmail() + " Is not active ");
 
         try {
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(jwtRequest.getEmail(), jwtRequest.getPassword()));
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(clientAuthDto.getEmail(), clientAuthDto.getPassword()));
         } catch (DisabledException e) {
             throw exception(CLIENT, ENTITY_EXCEPTION, "USER_DISABLED " + e.getMessage());
         } catch (BadCredentialsException e) {
@@ -138,7 +137,7 @@ public class AuthService implements UserDetailsService {
         }
 
         final UserDetails userDetails = jwtInMemoryUserDetailsService
-                .loadUserByUsername(jwtRequest.getEmail());
+                .loadUserByUsername(clientAuthDto.getEmail());
 
         final String token = jwtTokenUtil.generateToken(userDetails);
         return new JwtResponse(token);

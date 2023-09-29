@@ -1,4 +1,4 @@
-package com.mk.BackendQuiz.dto;
+package com.mk.BackendQuiz.dto.Client;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

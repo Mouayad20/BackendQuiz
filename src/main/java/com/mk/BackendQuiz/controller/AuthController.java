@@ -1,8 +1,7 @@
 package com.mk.BackendQuiz.controller;
 
-import com.mk.BackendQuiz.dto.ClientAuthDto;
-import com.mk.BackendQuiz.dto.ClientRegisterDto;
-import com.mk.BackendQuiz.dto.JwtRequest;
+import com.mk.BackendQuiz.dto.Client.ClientAuthDto;
+import com.mk.BackendQuiz.dto.Client.ClientCreateDto;
 import com.mk.BackendQuiz.dto.response.Response;
 import com.mk.BackendQuiz.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +16,8 @@ public class AuthController {
     private AuthService authService;
 
     @PostMapping(value = "/register")
-    public Response register(@RequestBody @Valid ClientRegisterDto clientRegisterDto) {
-        return Response.ok().setPayload(authService.register(clientRegisterDto));
+    public Response register(@RequestBody @Valid ClientCreateDto clientCreateDto) {
+        return Response.ok().setPayload(authService.register(clientCreateDto));
     }
 
     @GetMapping(value = "/activate")
@@ -27,8 +26,8 @@ public class AuthController {
     }
 
     @PostMapping(value = "/authenticate")
-    public Response authenticate(@RequestBody JwtRequest jwtRequest) {
-        return Response.ok().setPayload(authService.authenticate(jwtRequest));
+    public Response authenticate(@RequestBody ClientAuthDto clientAuthDto) {
+        return Response.ok().setPayload(authService.authenticate(clientAuthDto));
     }
 
     @PostMapping(value = "/setPassword")
