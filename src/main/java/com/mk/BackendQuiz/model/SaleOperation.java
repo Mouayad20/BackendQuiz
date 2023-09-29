@@ -25,7 +25,7 @@ public class SaleOperation {
     private Long id;
 
     @PositiveOrZero
-    private Double total;
+    private Double total = 0.0;
     @Column(name = "creation_data")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date creationData;
