@@ -1,0 +1,4176 @@
+{
+	"info": {
+		"_postman_id": "1c456590-f920-4ab3-8f1f-2bb123be5d32",
+		"name": "BackendQuiz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17156801"
+	},
+	"item": [
+		{
+			"name": "Chalenge1",
+			"item": [
+				{
+					"name": "chalenge1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"array\":[1, 2, 3, 4, 5, 6, 7, 8, 9],\r\n    \"expectedSum\":15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8888/api/auth/challenge1",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"auth",
+								"challenge1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"array\":[1, 2, 3, 4, 5, 6, 7, 8, 9],\r\n    \"expectedSum\":15\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/auth/challenge1",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"auth",
+										"challenge1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Sep 2023 03:45:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"indexes\": [\n        [\n            1,\n            5,\n            9\n        ],\n        [\n            1,\n            6,\n            8\n        ],\n        [\n            2,\n            4,\n            9\n        ],\n        [\n            2,\n            5,\n            8\n        ],\n        [\n            2,\n            6,\n            7\n        ],\n        [\n            3,\n            4,\n            8\n        ],\n        [\n            3,\n            5,\n            7\n        ],\n        [\n            4,\n            5,\n            6\n        ]\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"kokoko\",\r\n    \"lastName\": \"jojojoh\",\r\n    \"address\": \"Damascus\",\r\n    \"mobile\": \"22123499589\",\r\n    \"email\": \"Moa@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8888/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"kokoko\",\r\n    \"lastName\": \"jojojoh\",\r\n    \"address\": \"Damascus\",\r\n    \"mobile\": \"0121499589\",\r\n    \"email\": \"moukad18@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 12:31:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": {\n        \"name\": \"kokoko\",\n        \"lastName\": \"jojojoh\",\n        \"address\": \"Damascus\",\n        \"mobile\": \"0121499589\",\n        \"email\": \"moukad18@gmail.com\"\n    }\n}"
+						},
+						{
+							"name": "mobile exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"kokoko\",\r\n    \"lastName\": \"jojojoh\",\r\n    \"address\": \"Damascus\",\r\n    \"mobile\": \"0121499589\",\r\n    \"email\": \"moukad18@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 12:31:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"DUPLICATE_ENTITY\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T12:31:35.590+00:00\",\n        \"message\": \"Client with -  Mobile 0121499589 already exists.\"\n    }\n}"
+						},
+						{
+							"name": "email exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"kokoko\",\r\n    \"lastName\": \"jojojoh\",\r\n    \"address\": \"Damascus\",\r\n    \"mobile\": \"0122499589\",\r\n    \"email\": \"moukad18@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 12:31:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"DUPLICATE_ENTITY\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T12:31:54.766+00:00\",\n        \"message\": \"Client with -  Email moukad18@gmail.com already exists.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"anas@gmail.com\",\r\n    \"password\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8888/api/auth/authenticate",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"auth",
+								"authenticate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"moukad18@gmail.com\",\r\n    \"password\":\"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/auth/authenticate",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"auth",
+										"authenticate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 12:36:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": {\n        \"jwtToken\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb3VrYWQxOEBnbWFpbC5jb20iLCJleHAiOjE2OTYwMDkwMDQsImlhdCI6MTY5NTk5MTAwNH0.ssLVXQeZNgdKOs0_k0BpVHVR9Qa1aLIJ2FeIrlGAcGDH0S7d6CLTDTOBJcnrL15zfXegkIKXt7rIc9gNYWOHSg\"\n    }\n}"
+						},
+						{
+							"name": "client not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"moukad18@gmail.com\",\r\n    \"password\":\"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/auth/authenticate",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"auth",
+										"authenticate"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 12:29:34 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"NOT_FOUND\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T12:29:34.337+00:00\",\n        \"message\": \"This client moukad18@gmail.com does not exist.\"\n    }\n}"
+						},
+						{
+							"name": "client not active",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"moukad18@gmail.com\",\r\n    \"password\":\"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/auth/authenticate",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"auth",
+										"authenticate"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 12:34:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"EXCEPTION\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T12:34:25.730+00:00\",\n        \"message\": \"Client moukad18@gmail.com Is not active \"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "setPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"anas@gmail.com\",\r\n    \"password\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8888/api/auth/setPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"auth",
+								"setPassword"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"moukad18@gmail.com\",\r\n    \"password\":\"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/auth/setPassword",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"auth",
+										"setPassword"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 12:36:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": true\n}"
+						},
+						{
+							"name": "client not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"moudkad18@gmail.com\",\r\n    \"password\":\"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/auth/setPassword",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"auth",
+										"setPassword"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 12:32:49 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"NOT_FOUND\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T12:32:49.690+00:00\",\n        \"message\": \"This client moudkad18@gmail.com does not exist.\"\n    }\n}"
+						},
+						{
+							"name": "client not active",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"moukad18@gmail.com\",\r\n    \"password\":\"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/auth/setPassword",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"auth",
+										"setPassword"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 12:34:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"EXCEPTION\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T12:34:58.357+00:00\",\n        \"message\": \"Client moukad18@gmail.com Is not active \"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "activate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/api/auth/activate?key=18527",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"auth",
+								"activate"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "18527"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8888/api/auth/activate?key=27997",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"auth",
+										"activate"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "27997"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 12:35:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "client not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8888/api/auth/activate?key=27117",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"auth",
+										"activate"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "27117"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 12:35:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"EXCEPTION\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T12:35:58.285+00:00\",\n        \"message\": \"No client was found for this activation key\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "fetch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFzQGdtYWlsLmNvbSIsImV4cCI6MTY5NjA2MjU4MywiaWF0IjoxNjk2MDQ0NTgzfQ.1zM2ASpJwELWTazZS1GwS5OEhvbBWT00yTrDqMnyhPGrwoYqIiKK_fc3O5SW_CNmPTkVXopQlqqq0q98nbT6KA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/api/products/fetch?page=0&size=50",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"products",
+								"fetch"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8888/api/products/fetch?page=2&size=5",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"products",
+										"fetch"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 12:38:17 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": [\n        {\n            \"id\": 11,\n            \"name\": \"Keyboard\",\n            \"category\": \"Accessories\",\n            \"description\": \"Mechanical keyboard\",\n            \"price\": 80,\n            \"creationData\": \"2021-01-11T12:00:00.000+00:00\",\n            \"availableQuantity\": 32\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Monitor\",\n            \"category\": \"Electronics\",\n            \"description\": \"Wide-screen monitor\",\n            \"price\": 400,\n            \"creationData\": \"2021-01-12T06:00:00.000+00:00\",\n            \"availableQuantity\": 14\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Mouse\",\n            \"category\": \"Accessories\",\n            \"description\": \"Wireless mouse\",\n            \"price\": 40,\n            \"creationData\": \"2021-01-13T11:00:00.000+00:00\",\n            \"availableQuantity\": 26\n        },\n        {\n            \"id\": 14,\n            \"name\": \"Router\",\n            \"category\": \"Electronics\",\n            \"description\": \"High-speed router\",\n            \"price\": 120,\n            \"creationData\": \"2021-01-14T08:00:00.000+00:00\",\n            \"availableQuantity\": 38\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Hard Drive\",\n            \"category\": \"Electronics\",\n            \"description\": \"External hard drive\",\n            \"price\": 200,\n            \"creationData\": \"2021-01-15T10:00:00.000+00:00\",\n            \"availableQuantity\": 42\n        }\n    ],\n    \"metadata\": {\n        \"X-Total-Count\": [\n            \"20\"\n        ],\n        \"Link\": [\n            \"<http://localhost:8888/api/products/fetch?page=3&size=5>; rel=\\\"next\\\",<http://localhost:8888/api/products/fetch?page=1&size=5>; rel=\\\"prev\\\",<http://localhost:8888/api/products/fetch?page=3&size=5>; rel=\\\"last\\\",<http://localhost:8888/api/products/fetch?page=0&size=5>; rel=\\\"first\\\"\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFzQGdtYWlsLmNvbSIsImV4cCI6MTY5NjA2MjU4MywiaWF0IjoxNjk2MDQ0NTgzfQ.1zM2ASpJwELWTazZS1GwS5OEhvbBWT00yTrDqMnyhPGrwoYqIiKK_fc3O5SW_CNmPTkVXopQlqqq0q98nbT6KA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Labtop\",\r\n    \"category\": \"Elctric\",\r\n    \"description\": \"lamsa mdasm d masdaklsd dmasdlam asdmma\",\r\n    \"price\": 150.50,\r\n    \"initialQuantity\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8888/api/products/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"products",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Labtop\",\r\n    \"category\": \"Elctric\",\r\n    \"description\": \"lamsa mdasm d masdaklsd dmasdlam asdmma\",\r\n    \"price\": 150.50,\r\n    \"initialQuantity\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/products/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"products",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 12:38:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": {\n        \"id\": 22,\n        \"name\": \"Labtop\",\n        \"category\": \"Elctric\",\n        \"description\": \"lamsa mdasm d masdaklsd dmasdlam asdmma\",\n        \"price\": 150.5,\n        \"creationData\": \"2023-09-29T12:38:41.885+00:00\",\n        \"availableQuantity\": 10,\n        \"initialQuantity\": 10\n    }\n}"
+						},
+						{
+							"name": "client not exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Labtop\",\r\n    \"category\": \"Elctric\",\r\n    \"description\": \"lamsa mdasm d masdaklsd dmasdlam asdmma\",\r\n    \"price\": 150.50,\r\n    \"initialQuantity\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/products/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"products",
+										"create"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 12:30:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"NOT_FOUND\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T12:30:26.527+00:00\",\n        \"message\": \"This client moukad18@gmail.com does not exist.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 22,\r\n    \"name\": \"mimi\",\r\n    \"category\": \"momo\",\r\n    \"description\": \"koko\",\r\n    \"price\": null,\r\n    \"availableQuantity\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8888/api/products/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"products",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 22,\r\n    \"name\": \"mimi\",\r\n    \"category\": \"momo\",\r\n    \"description\": \"koko\",\r\n    \"price\": null,\r\n    \"availableQuantity\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/products/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"products",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 13:15:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": {\n        \"id\": 22,\n        \"name\": \"mimi\",\n        \"category\": \"momo\",\n        \"description\": \"koko\",\n        \"price\": 150.5,\n        \"availableQuantity\": 10\n    }\n}"
+						},
+						{
+							"name": "product not found",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 550,\r\n    \"name\": \"mimi\",\r\n    \"category\": \"momo\",\r\n    \"description\": \"koko\",\r\n    \"price\": 250,\r\n    \"availableQuantity\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/products/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"products",
+										"update"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 13:14:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"NOT_FOUND\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T13:14:09.821+00:00\",\n        \"message\": \"This product cannot be updated because it does not exist.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb3VrYWQxOEBnbWFpbC5jb20iLCJleHAiOjE2OTYwMDQ3NjMsImlhdCI6MTY5NTk4Njc2M30.k1JLivIq8owAxY92xp916J7wuIa5QmXPyMLMHihAh4vv2CHO7_tvWraBfT5GrSB5evqSkHC1jfIFJfiscS_8dw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/api/products/delete?id=22",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"products",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "22"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "product not exist",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8888/api/products/delete?id=220",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"products",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "220"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 13:32:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"NOT_FOUND\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T13:32:30.396+00:00\",\n        \"message\": \"This product cannot be deleted because it does not exist.\"\n    }\n}"
+						},
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8888/api/products/delete?id=22",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"products",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "22"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 13:32:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "fetch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb3VrYWQxOEBnbWFpbC5jb20iLCJleHAiOjE2OTYwMDQ3NjMsImlhdCI6MTY5NTk4Njc2M30.k1JLivIq8owAxY92xp916J7wuIa5QmXPyMLMHihAh4vv2CHO7_tvWraBfT5GrSB5evqSkHC1jfIFJfiscS_8dw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/api/clients/fetch?page=2&size=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"clients",
+								"fetch"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8888/api/clients/fetch?page=2&size=3",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"clients",
+										"fetch"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "size",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 13:57:02 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": [\n        {\n            \"id\": 7,\n            \"name\": \"Sarah\",\n            \"lastName\": \"Johnson\",\n            \"address\": \"345 Elm St\",\n            \"mobile\": \"2223334424\",\n            \"email\": \"sarahjohnson@example.com\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Matthew\",\n            \"lastName\": \"Miller\",\n            \"address\": \"678 Pine St\",\n            \"mobile\": \"5556667774\",\n            \"email\": \"matthewmiller@example.com\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Ava\",\n            \"lastName\": \"Smith\",\n            \"address\": \"123 Oak St\",\n            \"mobile\": \"8889990000\",\n            \"email\": \"avasmith@example.com\"\n        }\n    ],\n    \"metadata\": {\n        \"X-Total-Count\": [\n            \"28\"\n        ],\n        \"Link\": [\n            \"<http://localhost:8888/api/clients/fetch?page=3&size=3>; rel=\\\"next\\\",<http://localhost:8888/api/clients/fetch?page=1&size=3>; rel=\\\"prev\\\",<http://localhost:8888/api/clients/fetch?page=9&size=3>; rel=\\\"last\\\",<http://localhost:8888/api/clients/fetch?page=0&size=3>; rel=\\\"first\\\"\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb3VrYWQxOEBnbWFpbC5jb20iLCJleHAiOjE2OTYwMDQ3NjMsImlhdCI6MTY5NTk4Njc2M30.k1JLivIq8owAxY92xp916J7wuIa5QmXPyMLMHihAh4vv2CHO7_tvWraBfT5GrSB5evqSkHC1jfIFJfiscS_8dw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 8,\r\n    \"name\": \"Matthew\",\r\n    \"lastName\": \"Miller\",\r\n    \"address\": \"678 Pine St\",\r\n    \"mobile\": \"5556612771\",\r\n    \"email\": \"moukad18@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8888/api/clients/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"clients",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 8,\r\n    \"name\": \"MatthewUpdate2\",\r\n    \"lastName\": \"MillerUpdate\",\r\n    \"address\": \"680 Pine St\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/clients/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"clients",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 14:32:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": {\n        \"id\": 8,\n        \"name\": \"MatthewUpdate2\",\n        \"lastName\": \"MillerUpdate\",\n        \"address\": \"680 Pine St\",\n        \"mobile\": \"5556667774\",\n        \"email\": \"matthewmiller@example.com\"\n    }\n}"
+						},
+						{
+							"name": "client not found",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 800,\r\n    \"name\": \"MatthewUpdate2\",\r\n    \"lastName\": \"MillerUpdate\",\r\n    \"address\": \"680 Pine St\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/clients/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"clients",
+										"update"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 14:31:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"NOT_FOUND\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T14:31:48.362+00:00\",\n        \"message\": \"This client  does not exist.\"\n    }\n}"
+						},
+						{
+							"name": "mobile exist",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 8,\r\n    \"name\": \"Matthew\",\r\n    \"lastName\": \"Miller\",\r\n    \"address\": \"678 Pine St\",\r\n    \"mobile\": \"5556667774\",\r\n    \"email\": \"matthewmiller@example.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/clients/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"clients",
+										"update"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 14:35:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"DUPLICATE_ENTITY\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T14:35:01.750+00:00\",\n        \"message\": \"Client with -  Mobile 5556667774 already exists.\"\n    }\n}"
+						},
+						{
+							"name": "email exist",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 8,\r\n    \"name\": \"Matthew\",\r\n    \"lastName\": \"Miller\",\r\n    \"address\": \"678 Pine St\",\r\n    \"mobile\": \"5556662774\",\r\n    \"email\": \"matthewmiller@example.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/clients/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"clients",
+										"update"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 14:35:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"DUPLICATE_ENTITY\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T14:35:31.973+00:00\",\n        \"message\": \"Client with -  Email matthewmiller@example.com already exists.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb3VrYWQxOEBnbWFpbC5jb20iLCJleHAiOjE2OTYwMjM5NjcsImlhdCI6MTY5NjAwNTk2N30.Kzujtjy-ldwjm7iW2IdbjOvNKAOkSlSJ_mXPvsxo0KhTvYCwRIEBoDjz6jI7EYerYf-83D5eZj6O0gyy-1j4Tw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/api/clients/delete?id=35",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"clients",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "35"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8888/api/clients/delete?id=8",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"clients",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 16:47:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": true\n}"
+						},
+						{
+							"name": "client not exist",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8888/api/clients/delete?id=220",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"clients",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "220"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 16:47:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"NOT_FOUND\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T16:47:16.266+00:00\",\n        \"message\": \"This client  does not exist.\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Sales",
+			"item": [
+				{
+					"name": "fetch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraGFsZWRAZ21haWwuY29tIiwiZXhwIjoxNjk2MDI1OTg0LCJpYXQiOjE2OTYwMDc5ODR9.Fd5VN58nUpOi36lLUx8wjogUAvRXNdADdJShszAvkZzdlrMlPCPNhcRq6P0ljrE-Wc5LX0JQIAwiMlHWxu1pKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/api/saleOperations/fetch?page=0&size=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"saleOperations",
+								"fetch"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8888/api/saleOperations/fetch?page=0&size=3",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"saleOperations",
+										"fetch"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 17:20:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": [\n        {\n            \"id\": 1,\n            \"total\": 500,\n            \"creationData\": \"2021-01-01T07:00:00.000+00:00\",\n            \"client\": {\n                \"id\": 1,\n                \"name\": \"John\",\n                \"lastName\": \"Doe\",\n                \"address\": \"123 Main St\",\n                \"mobile\": \"1234567890\",\n                \"email\": \"johndoe@example.com\"\n            },\n            \"seller\": {\n                \"id\": 2,\n                \"name\": \"Jane\",\n                \"lastName\": \"Smith\",\n                \"address\": \"456 Elm St\",\n                \"mobile\": \"9876543210\",\n                \"email\": \"janesmith@example.com\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"total\": 1000,\n            \"creationData\": \"2021-01-02T09:00:00.000+00:00\",\n            \"client\": {\n                \"id\": 2,\n                \"name\": \"Jane\",\n                \"lastName\": \"Smith\",\n                \"address\": \"456 Elm St\",\n                \"mobile\": \"9876543210\",\n                \"email\": \"janesmith@example.com\"\n            },\n            \"seller\": {\n                \"id\": 1,\n                \"name\": \"John\",\n                \"lastName\": \"Doe\",\n                \"address\": \"123 Main St\",\n                \"mobile\": \"1234567890\",\n                \"email\": \"johndoe@example.com\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"total\": 250,\n            \"creationData\": \"2021-01-03T12:00:00.000+00:00\",\n            \"client\": {\n                \"id\": 3,\n                \"name\": \"Michael\",\n                \"lastName\": \"Johnson\",\n                \"address\": \"789 Oak St\",\n                \"mobile\": \"5555555555\",\n                \"email\": \"michaeljohnson@example.com\"\n            },\n            \"seller\": {\n                \"id\": 1,\n                \"name\": \"John\",\n                \"lastName\": \"Doe\",\n                \"address\": \"123 Main St\",\n                \"mobile\": \"1234567890\",\n                \"email\": \"johndoe@example.com\"\n            }\n        }\n    ],\n    \"metadata\": {\n        \"X-Total-Count\": [\n            \"17\"\n        ],\n        \"Link\": [\n            \"<http://localhost:8888/api/saleOperations/fetch?page=1&size=3>; rel=\\\"next\\\",<http://localhost:8888/api/saleOperations/fetch?page=5&size=3>; rel=\\\"last\\\",<http://localhost:8888/api/saleOperations/fetch?page=0&size=3>; rel=\\\"first\\\"\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb3VrYWQxOEBnbWFpbC5jb20iLCJleHAiOjE2OTYwMzI5MzQsImlhdCI6MTY5NjAxNDkzNH0.7OLEZ7_tb7giWxRm2h1n6kE80hUerF3odXphTJuMCjwYiixZMbW8b5f6A6vEIX5ldw0qhKxo5zlLG5bbAGwRlA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"quantity\": 1,\r\n        \"product\": {\r\n            \"id\": 6,\r\n            \"name\": \"Watch\",\r\n            \"category\": \"Accessories\",\r\n            \"description\": \"Stylish watch\",\r\n            \"price\": 300.0,\r\n            \"creationData\": \"2021-01-06T08:00:00.000+00:00\",\r\n            \"availableQuantity\": 35\r\n        }\r\n    },\r\n    {\r\n        \"quantity\": 1,\r\n        \"product\": {\r\n            \"id\": 7,\r\n            \"name\": \"Speaker\",\r\n            \"category\": \"Electronics\",\r\n            \"description\": \"Bluetooth speaker\",\r\n            \"price\": 100.0,\r\n            \"creationData\": \"2021-01-07T10:00:00.000+00:00\",\r\n            \"availableQuantity\": 40\r\n        }\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8888/api/saleOperations/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"saleOperations",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"quantity\": 10,\r\n        \"product\": {\r\n            \"id\": 11,\r\n            \"name\": \"Keyboard\",\r\n            \"category\": \"Accessories\",\r\n            \"description\": \"Mechanical keyboard\",\r\n            \"price\": 80,\r\n            \"creationData\": \"2021-01-11T12:00:00.000+00:00\",\r\n            \"availableQuantity\": 32\r\n        }\r\n    },\r\n    {\r\n        \"quantity\": 10,\r\n        \"product\": {\r\n            \"id\": 12,\r\n            \"name\": \"Monitor\",\r\n            \"category\": \"Electronics\",\r\n            \"description\": \"Wide-screen monitor\",\r\n            \"price\": 400,\r\n            \"creationData\": \"2021-01-12T06:00:00.000+00:00\",\r\n            \"availableQuantity\": 14\r\n        }\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/saleOperations/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"saleOperations",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 18:48:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": {\n        \"id\": 22,\n        \"total\": 4800,\n        \"creationData\": \"2023-09-29T18:48:39.331+00:00\",\n        \"client\": {\n            \"id\": 29,\n            \"name\": \"khaled\",\n            \"lastName\": \"Kadoora\",\n            \"address\": \"aaaa sss\",\n            \"mobile\": \"09511259746\",\n            \"email\": \"khaled@gmail.com\"\n        },\n        \"seller\": {\n            \"id\": 6,\n            \"name\": \"David\",\n            \"lastName\": \"Smith\",\n            \"address\": \"567 Oak St\",\n            \"mobile\": \"7778889999\",\n            \"email\": \"davidsmith@example.com\"\n        },\n        \"transactions\": [\n            {\n                \"id\": 23,\n                \"price\": 800,\n                \"quantity\": 10,\n                \"product\": {\n                    \"id\": 11,\n                    \"name\": \"Keyboard\",\n                    \"category\": \"Accessories\",\n                    \"description\": \"Mechanical keyboard\",\n                    \"price\": 80,\n                    \"creationData\": \"2021-01-11T12:00:00.000+00:00\",\n                    \"availableQuantity\": 22\n                }\n            },\n            {\n                \"id\": 24,\n                \"price\": 4000,\n                \"quantity\": 10,\n                \"product\": {\n                    \"id\": 12,\n                    \"name\": \"Monitor\",\n                    \"category\": \"Electronics\",\n                    \"description\": \"Wide-screen monitor\",\n                    \"price\": 400,\n                    \"creationData\": \"2021-01-12T06:00:00.000+00:00\",\n                    \"availableQuantity\": 4\n                }\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "wroge quantity",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"quantity\": 10,\r\n        \"product\": {\r\n            \"id\": 11,\r\n            \"name\": \"Keyboard\",\r\n            \"category\": \"Accessories\",\r\n            \"description\": \"Mechanical keyboard\",\r\n            \"price\": 80,\r\n            \"creationData\": \"2021-01-11T12:00:00.000+00:00\",\r\n            \"availableQuantity\": 9\r\n        }\r\n    },\r\n    {\r\n        \"quantity\": 10,\r\n        \"product\": {\r\n            \"id\": 12,\r\n            \"name\": \"Monitor\",\r\n            \"category\": \"Electronics\",\r\n            \"description\": \"Wide-screen monitor\",\r\n            \"price\": 400,\r\n            \"creationData\": \"2021-01-12T06:00:00.000+00:00\",\r\n            \"availableQuantity\": 9\r\n        }\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/saleOperations/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"saleOperations",
+										"create"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 18:46:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"EXCEPTION\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T18:46:05.269+00:00\",\n        \"message\": \"The quantity demanded is more than the quantity available.\"\n    }\n}"
+						},
+						{
+							"name": "product not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"quantity\": 10,\r\n        \"product\": {\r\n            \"id\": 15051,\r\n            \"name\": \"Keyboard\",\r\n            \"category\": \"Accessories\",\r\n            \"description\": \"Mechanical keyboard\",\r\n            \"price\": 80,\r\n            \"creationData\": \"2021-01-11T12:00:00.000+00:00\",\r\n            \"availableQuantity\": 32\r\n        }\r\n    },\r\n    {\r\n        \"quantity\": 10,\r\n        \"product\": {\r\n            \"id\": 12,\r\n            \"name\": \"Monitor\",\r\n            \"category\": \"Electronics\",\r\n            \"description\": \"Wide-screen monitor\",\r\n            \"price\": 400,\r\n            \"creationData\": \"2021-01-12T06:00:00.000+00:00\",\r\n            \"availableQuantity\": 14\r\n        }\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/saleOperations/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"saleOperations",
+										"create"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 18:50:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"NOT_FOUND\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T18:50:21.646+00:00\",\n        \"message\": \"This product cannot be found because it does not exist.\"\n    }\n}"
+						},
+						{
+							"name": "client not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"quantity\": 1,\r\n        \"product\": {\r\n            \"id\": 11,\r\n            \"name\": \"Keyboard\",\r\n            \"category\": \"Accessories\",\r\n            \"description\": \"Mechanical keyboard\",\r\n            \"price\": 80,\r\n            \"creationData\": \"2021-01-11T12:00:00.000+00:00\",\r\n            \"availableQuantity\": 32\r\n        }\r\n    },\r\n    {\r\n        \"quantity\": 10,\r\n        \"product\": {\r\n            \"id\": 1,\r\n            \"name\": \"Monitor\",\r\n            \"category\": \"Electronics\",\r\n            \"description\": \"Wide-screen monitor\",\r\n            \"price\": 400,\r\n            \"creationData\": \"2021-01-12T06:00:00.000+00:00\",\r\n            \"availableQuantity\": 14\r\n        }\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/saleOperations/create",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"saleOperations",
+										"create"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 18:54:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"NOT_FOUND\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T18:54:53.448+00:00\",\n        \"message\": \"This client khaled@gmail.com does not exist.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb3VrYWQxOEBnbWFpbC5jb20iLCJleHAiOjE2OTYwMzI5MzQsImlhdCI6MTY5NjAxNDkzNH0.7OLEZ7_tb7giWxRm2h1n6kE80hUerF3odXphTJuMCjwYiixZMbW8b5f6A6vEIX5ldw0qhKxo5zlLG5bbAGwRlA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 24,\r\n    \"transactions\": [\r\n        {\r\n            \"id\": 27,\r\n            \"price\": 10.0,\r\n            \"quantity\": 55,\r\n            \"product\": {\r\n                \"id\": 6,\r\n                \"name\": \"Watch\",\r\n                \"category\": \"Accessories\",\r\n                \"description\": \"Stylish watch\",\r\n                \"price\": 300.0,\r\n                \"creationData\": \"2021-01-06T08:00:00.000+00:00\",\r\n                \"availableQuantity\": 30\r\n            }\r\n        },\r\n        {\r\n            \"id\": 28,\r\n            \"price\": 10.0,\r\n            \"quantity\": 15,\r\n            \"product\": {\r\n                \"id\": 7,\r\n                \"name\": \"Speaker\",\r\n                \"category\": \"Electronics\",\r\n                \"description\": \"Bluetooth speaker\",\r\n                \"price\": 100.0,\r\n                \"creationData\": \"2021-01-07T10:00:00.000+00:00\",\r\n                \"availableQuantity\": 35\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8888/api/saleOperations/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"saleOperations",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok update price",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 24,\r\n    \"transactions\": [\r\n        {\r\n            \"id\": 27,\r\n            \"price\": 100.0,\r\n            \"quantity\": 1,\r\n            \"product\": {\r\n                \"id\": 6,\r\n                \"name\": \"Watch\",\r\n                \"category\": \"Accessories\",\r\n                \"description\": \"Stylish watch\",\r\n                \"price\": 300.0,\r\n                \"creationData\": \"2021-01-06T08:00:00.000+00:00\",\r\n                \"availableQuantity\": 34\r\n            }\r\n        },\r\n        {\r\n            \"id\": 28,\r\n            \"price\": 50.0,\r\n            \"quantity\": 1,\r\n            \"product\": {\r\n                \"id\": 7,\r\n                \"name\": \"Speaker\",\r\n                \"category\": \"Electronics\",\r\n                \"description\": \"Bluetooth speaker\",\r\n                \"price\": 100.0,\r\n                \"creationData\": \"2021-01-07T10:00:00.000+00:00\",\r\n                \"availableQuantity\": 39\r\n            }\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/saleOperations/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"saleOperations",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 20:10:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": {\n        \"id\": 24,\n        \"total\": 150,\n        \"creationData\": \"2023-09-29T19:17:15.000+00:00\",\n        \"client\": {\n            \"id\": 35,\n            \"name\": \"kokoko\",\n            \"lastName\": \"jojojoh\",\n            \"address\": \"Damascus\",\n            \"mobile\": \"0122499589\",\n            \"email\": \"moukad18@gmail.com\"\n        },\n        \"seller\": {\n            \"id\": 3,\n            \"name\": \"Michael\",\n            \"lastName\": \"Johnson\",\n            \"address\": \"789 Oak St\",\n            \"mobile\": \"5555555555\",\n            \"email\": \"michaeljohnson@example.com\"\n        },\n        \"transactions\": [\n            {\n                \"id\": 27,\n                \"price\": 100,\n                \"quantity\": 1,\n                \"product\": {\n                    \"id\": 6,\n                    \"name\": \"Watch\",\n                    \"category\": \"Accessories\",\n                    \"description\": \"Stylish watch\",\n                    \"price\": 300,\n                    \"creationData\": \"2021-01-06T08:00:00.000+00:00\",\n                    \"availableQuantity\": 34\n                }\n            },\n            {\n                \"id\": 28,\n                \"price\": 50,\n                \"quantity\": 1,\n                \"product\": {\n                    \"id\": 7,\n                    \"name\": \"Speaker\",\n                    \"category\": \"Electronics\",\n                    \"description\": \"Bluetooth speaker\",\n                    \"price\": 100,\n                    \"creationData\": \"2021-01-07T10:00:00.000+00:00\",\n                    \"availableQuantity\": 39\n                }\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "ok quantity update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 24,\r\n    \"transactions\": [\r\n        {\r\n            \"id\": 27,\r\n            \"price\": 100.0,\r\n            \"quantity\": 10,\r\n            \"product\": {\r\n                \"id\": 6,\r\n                \"name\": \"Watch\",\r\n                \"category\": \"Accessories\",\r\n                \"description\": \"Stylish watch\",\r\n                \"price\": 300.0,\r\n                \"creationData\": \"2021-01-06T08:00:00.000+00:00\",\r\n                \"availableQuantity\": 34\r\n            }\r\n        },\r\n        {\r\n            \"id\": 28,\r\n            \"price\": 50.0,\r\n            \"quantity\": 10,\r\n            \"product\": {\r\n                \"id\": 7,\r\n                \"name\": \"Speaker\",\r\n                \"category\": \"Electronics\",\r\n                \"description\": \"Bluetooth speaker\",\r\n                \"price\": 100.0,\r\n                \"creationData\": \"2021-01-07T10:00:00.000+00:00\",\r\n                \"availableQuantity\": 39\r\n            }\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/saleOperations/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"saleOperations",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 20:12:34 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": {\n        \"id\": 24,\n        \"total\": 150,\n        \"creationData\": \"2023-09-29T19:17:15.000+00:00\",\n        \"client\": {\n            \"id\": 35,\n            \"name\": \"kokoko\",\n            \"lastName\": \"jojojoh\",\n            \"address\": \"Damascus\",\n            \"mobile\": \"0122499589\",\n            \"email\": \"moukad18@gmail.com\"\n        },\n        \"seller\": {\n            \"id\": 3,\n            \"name\": \"Michael\",\n            \"lastName\": \"Johnson\",\n            \"address\": \"789 Oak St\",\n            \"mobile\": \"5555555555\",\n            \"email\": \"michaeljohnson@example.com\"\n        },\n        \"transactions\": [\n            {\n                \"id\": 27,\n                \"price\": 100,\n                \"quantity\": 10,\n                \"product\": {\n                    \"id\": 6,\n                    \"name\": \"Watch\",\n                    \"category\": \"Accessories\",\n                    \"description\": \"Stylish watch\",\n                    \"price\": 300,\n                    \"creationData\": \"2021-01-06T08:00:00.000+00:00\",\n                    \"availableQuantity\": 25\n                }\n            },\n            {\n                \"id\": 28,\n                \"price\": 50,\n                \"quantity\": 10,\n                \"product\": {\n                    \"id\": 7,\n                    \"name\": \"Speaker\",\n                    \"category\": \"Electronics\",\n                    \"description\": \"Bluetooth speaker\",\n                    \"price\": 100,\n                    \"creationData\": \"2021-01-07T10:00:00.000+00:00\",\n                    \"availableQuantity\": 30\n                }\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "ok both",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 24,\r\n    \"transactions\": [\r\n        {\r\n            \"id\": 27,\r\n            \"price\": 10.0,\r\n            \"quantity\": 15,\r\n            \"product\": {\r\n                \"id\": 6,\r\n                \"name\": \"Watch\",\r\n                \"category\": \"Accessories\",\r\n                \"description\": \"Stylish watch\",\r\n                \"price\": 300.0,\r\n                \"creationData\": \"2021-01-06T08:00:00.000+00:00\",\r\n                \"availableQuantity\": 30\r\n            }\r\n        },\r\n        {\r\n            \"id\": 28,\r\n            \"price\": 10.0,\r\n            \"quantity\": 15,\r\n            \"product\": {\r\n                \"id\": 7,\r\n                \"name\": \"Speaker\",\r\n                \"category\": \"Electronics\",\r\n                \"description\": \"Bluetooth speaker\",\r\n                \"price\": 100.0,\r\n                \"creationData\": \"2021-01-07T10:00:00.000+00:00\",\r\n                \"availableQuantity\": 35\r\n            }\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/saleOperations/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"saleOperations",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 20:19:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": {\n        \"id\": 24,\n        \"total\": 20,\n        \"creationData\": \"2023-09-29T19:17:15.000+00:00\",\n        \"client\": {\n            \"id\": 35,\n            \"name\": \"kokoko\",\n            \"lastName\": \"jojojoh\",\n            \"address\": \"Damascus\",\n            \"mobile\": \"0122499589\",\n            \"email\": \"moukad18@gmail.com\"\n        },\n        \"seller\": {\n            \"id\": 3,\n            \"name\": \"Michael\",\n            \"lastName\": \"Johnson\",\n            \"address\": \"789 Oak St\",\n            \"mobile\": \"5555555555\",\n            \"email\": \"michaeljohnson@example.com\"\n        },\n        \"transactions\": [\n            {\n                \"id\": 27,\n                \"price\": 10,\n                \"quantity\": 15,\n                \"product\": {\n                    \"id\": 6,\n                    \"name\": \"Watch\",\n                    \"category\": \"Accessories\",\n                    \"description\": \"Stylish watch\",\n                    \"price\": 300,\n                    \"creationData\": \"2021-01-06T08:00:00.000+00:00\",\n                    \"availableQuantity\": 20\n                }\n            },\n            {\n                \"id\": 28,\n                \"price\": 10,\n                \"quantity\": 15,\n                \"product\": {\n                    \"id\": 7,\n                    \"name\": \"Speaker\",\n                    \"category\": \"Electronics\",\n                    \"description\": \"Bluetooth speaker\",\n                    \"price\": 100,\n                    \"creationData\": \"2021-01-07T10:00:00.000+00:00\",\n                    \"availableQuantity\": 25\n                }\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "sale operation not fount",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 240,\r\n    \"transactions\": [\r\n        {\r\n            \"id\": 27,\r\n            \"price\": 10.0,\r\n            \"quantity\": 15,\r\n            \"product\": {\r\n                \"id\": 6,\r\n                \"name\": \"Watch\",\r\n                \"category\": \"Accessories\",\r\n                \"description\": \"Stylish watch\",\r\n                \"price\": 300.0,\r\n                \"creationData\": \"2021-01-06T08:00:00.000+00:00\",\r\n                \"availableQuantity\": 30\r\n            }\r\n        },\r\n        {\r\n            \"id\": 28,\r\n            \"price\": 10.0,\r\n            \"quantity\": 15,\r\n            \"product\": {\r\n                \"id\": 7,\r\n                \"name\": \"Speaker\",\r\n                \"category\": \"Electronics\",\r\n                \"description\": \"Bluetooth speaker\",\r\n                \"price\": 100.0,\r\n                \"creationData\": \"2021-01-07T10:00:00.000+00:00\",\r\n                \"availableQuantity\": 35\r\n            }\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/saleOperations/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"saleOperations",
+										"update"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 20:21:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"NOT_FOUND\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T20:21:28.102+00:00\",\n        \"message\": \"This sale operation cannot be found because it does not exist.\"\n    }\n}"
+						},
+						{
+							"name": "wrong quantity",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 24,\r\n    \"transactions\": [\r\n        {\r\n            \"id\": 27,\r\n            \"price\": 10.0,\r\n            \"quantity\": 55,\r\n            \"product\": {\r\n                \"id\": 6,\r\n                \"name\": \"Watch\",\r\n                \"category\": \"Accessories\",\r\n                \"description\": \"Stylish watch\",\r\n                \"price\": 300.0,\r\n                \"creationData\": \"2021-01-06T08:00:00.000+00:00\",\r\n                \"availableQuantity\": 30\r\n            }\r\n        },\r\n        {\r\n            \"id\": 28,\r\n            \"price\": 10.0,\r\n            \"quantity\": 15,\r\n            \"product\": {\r\n                \"id\": 7,\r\n                \"name\": \"Speaker\",\r\n                \"category\": \"Electronics\",\r\n                \"description\": \"Bluetooth speaker\",\r\n                \"price\": 100.0,\r\n                \"creationData\": \"2021-01-07T10:00:00.000+00:00\",\r\n                \"availableQuantity\": 35\r\n            }\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8888/api/saleOperations/update",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"saleOperations",
+										"update"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 20:22:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"EXCEPTION\",\n    \"errors\": {\n        \"timestamp\": \"2023-09-29T20:22:07.522+00:00\",\n        \"message\": \"The quantity demanded is more than the quantity available.\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Reporting",
+			"item": [
+				{
+					"name": "sales report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFzQGdtYWlsLmNvbSIsImV4cCI6MTY5NjA1MTA3NCwiaWF0IjoxNjk2MDMzMDc0fQ.NDc8VkwdXA8bVKugR_IaDtpr5QbBjWm5lFfhAKqltKlMmu3fEQHtaYE2izoi0kJUuvIvkTVoiP5zv9q7X_sQ3w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/api/saleOperations/report?from=2000-01-01T06:00:00.000+00:00&to=2025-01-5T06:00:00.000+00:00",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"saleOperations",
+								"report"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2000-01-01T06:00:00.000+00:00"
+								},
+								{
+									"key": "to",
+									"value": "2025-01-5T06:00:00.000+00:00"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8888/api/saleOperations/report?from=2020-01-01T06:00:00.000+00:00&to=2025-01-5T06:00:00.000+00:00",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"saleOperations",
+										"report"
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": "2020-01-01T06:00:00.000+00:00"
+										},
+										{
+											"key": "to",
+											"value": "2025-01-5T06:00:00.000+00:00"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 23:22:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": {\n        \"totalNumberOfSales\": 17,\n        \"totalRevenue\": 7920,\n        \"topSellingProducts\": [\n            {\n                \"id\": 1,\n                \"name\": \"Laptop\",\n                \"category\": \"Electronics\",\n                \"description\": \"High-performance laptop\",\n                \"price\": 1500,\n                \"creationData\": \"2021-01-01T07:00:00.000+00:00\",\n                \"availableQuantity\": 0\n            },\n            {\n                \"id\": 14,\n                \"name\": \"Router\",\n                \"category\": \"Electronics\",\n                \"description\": \"High-speed router\",\n                \"price\": 120,\n                \"creationData\": \"2021-01-14T08:00:00.000+00:00\",\n                \"availableQuantity\": 38\n            },\n            {\n                \"id\": 8,\n                \"name\": \"Camera\",\n                \"category\": \"Electronics\",\n                \"description\": \"High-resolution camera\",\n                \"price\": 800,\n                \"creationData\": \"2021-01-08T13:00:00.000+00:00\",\n                \"availableQuantity\": 18\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Smartphone\",\n                \"category\": \"Electronics\",\n                \"description\": \"Flagship smartphone\",\n                \"price\": 1000,\n                \"creationData\": \"2021-01-02T09:00:00.000+00:00\",\n                \"availableQuantity\": 20\n            },\n            {\n                \"id\": 17,\n                \"name\": \"Chair\",\n                \"category\": \"Home\",\n                \"description\": \"Ergonomic office chair\",\n                \"price\": 150,\n                \"creationData\": \"2021-01-17T07:00:00.000+00:00\",\n                \"availableQuantity\": 20\n            }\n        ],\n        \"topPerformingSellers\": [\n            {\n                \"id\": 1,\n                \"name\": \"John\",\n                \"lastName\": \"Doe\",\n                \"address\": \"123 Main St\",\n                \"mobile\": \"1234567890\",\n                \"email\": \"johndoe@example.com\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Michael\",\n                \"lastName\": \"Johnson\",\n                \"address\": \"789 Oak St\",\n                \"mobile\": \"5555555555\",\n                \"email\": \"michaeljohnson@example.com\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Emily\",\n                \"lastName\": \"Williams\",\n                \"address\": \"567 Pine St\",\n                \"mobile\": \"1112213333\",\n                \"email\": \"emilywilliams@example.com\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"David\",\n                \"lastName\": \"Smith\",\n                \"address\": \"567 Oak St\",\n                \"mobile\": \"7778889999\",\n                \"email\": \"davidsmith@example.com\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Sarah\",\n                \"lastName\": \"Johnson\",\n                \"address\": \"345 Elm St\",\n                \"mobile\": \"2223334424\",\n                \"email\": \"sarahjohnson@example.com\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "client report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFzQGdtYWlsLmNvbSIsImV4cCI6MTY5NjA1MjI0OCwiaWF0IjoxNjk2MDM0MjQ4fQ.Sooh-acZVOYyAj37RfVD049L1sEU75s3nk2mFmF8Dw-ZJXzxVkmLcgOIHOYJVM1DfRkeuvS1IhPcxd_s3ocwhg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/api/clients/report",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"clients",
+								"report"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8888/api/clients/report",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"clients",
+										"report"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Sep 2023 00:37:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": {\n        \"totalNumberOfClients\": 25,\n        \"topSpendingClients\": [\n            {\n                \"id\": 5,\n                \"name\": \"Michaela\",\n                \"lastName\": \"Anderson\",\n                \"address\": \"890 Maple St\",\n                \"mobile\": \"4445556666\",\n                \"email\": \"michaelaanderson@example.com\"\n            },\n            {\n                \"id\": 19,\n                \"name\": \"Olivia\",\n                \"lastName\": \"Miller\",\n                \"address\": \"890 Oak St\",\n                \"mobile\": \"2223334444\",\n                \"email\": \"oliviamiller@example.com\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Jane\",\n                \"lastName\": \"Smith\",\n                \"address\": \"456 Elm St\",\n                \"mobile\": \"9876543210\",\n                \"email\": \"janesmith@example.com\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Emily\",\n                \"lastName\": \"Williams\",\n                \"address\": \"567 Pine St\",\n                \"mobile\": \"1112213333\",\n                \"email\": \"emilywilliams@example.com\"\n            },\n            {\n                \"id\": 18,\n                \"name\": \"Alexander\",\n                \"lastName\": \"Johnson\",\n                \"address\": \"567 Maple St\",\n                \"mobile\": \"7778189999\",\n                \"email\": \"alexanderjohnson@example.com\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "product report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFzQGdtYWlsLmNvbSIsImV4cCI6MTY5NjA1MjI0OCwiaWF0IjoxNjk2MDM0MjQ4fQ.Sooh-acZVOYyAj37RfVD049L1sEU75s3nk2mFmF8Dw-ZJXzxVkmLcgOIHOYJVM1DfRkeuvS1IhPcxd_s3ocwhg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/api/products/report",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"products",
+								"report"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8888/api/products/report",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"products",
+										"report"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Sep 2023 01:10:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"payload\": {\n        \"inventoryStatus\": [\n            {\n                \"weekNumber\": 0,\n                \"productsInInventory\": 2\n            },\n            {\n                \"weekNumber\": 1,\n                \"productsInInventory\": 7\n            },\n            {\n                \"weekNumber\": 2,\n                \"productsInInventory\": 5\n            },\n            {\n                \"weekNumber\": 3,\n                \"productsInInventory\": 4\n            }\n        ],\n        \"priceAnalysis\": {\n            \"minPrice\": 40,\n            \"maxPrice\": 1500,\n            \"avgPrice\": 493.8888888888889\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
