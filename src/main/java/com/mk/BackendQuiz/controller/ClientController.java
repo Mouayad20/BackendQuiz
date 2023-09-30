@@ -33,4 +33,9 @@ public class ClientController {
     public Response deleteClient(@RequestParam(name = "id") Long id) {
         return Response.ok().setPayload(clientService.deleteClient(id));
     }
+
+    @GetMapping(value = "/report")
+    public Response clientReport() {
+        return Response.ok().setPayload(clientService.clientReport());
+    }
 }

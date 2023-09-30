@@ -4,6 +4,7 @@ import com.mk.BackendQuiz.dto.Product.ProductCreateDto;
 import com.mk.BackendQuiz.dto.Product.ProductDto;
 import com.mk.BackendQuiz.dto.Product.ProductFetchDto;
 import com.mk.BackendQuiz.dto.Product.ProductUpdateDto;
+import com.mk.BackendQuiz.dto.Reporting.ProductReportDto;
 import com.mk.BackendQuiz.exception.EntityType;
 import com.mk.BackendQuiz.exception.ExceptionManager;
 import com.mk.BackendQuiz.exception.ExceptionType;
@@ -87,5 +88,12 @@ public class ProductService {
         productRepository.delete(product.get());
 
         return !productRepository.findById(id).isPresent();
+    }
+
+    public ProductReportDto productReport() {
+        ProductReportDto productReportDto = new ProductReportDto();
+        productReportDto.setInventoryStatus(productRepository.findInventoryStatus());
+        productReportDto.setPriceAnalysis(productRepository.findPriceAnalysis());
+        return productReportDto;
     }
 }

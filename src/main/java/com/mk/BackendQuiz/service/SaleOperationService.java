@@ -1,6 +1,7 @@
 package com.mk.BackendQuiz.service;
 
 import com.mk.BackendQuiz.dto.Product.ProductFetchDto;
+import com.mk.BackendQuiz.dto.Reporting.SalesReportDto;
 import com.mk.BackendQuiz.dto.Sales.SaleOperationDto;
 import com.mk.BackendQuiz.dto.Sales.SaleOperationFetchDto;
 import com.mk.BackendQuiz.dto.Sales.TransactionDto;
@@ -22,9 +23,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static com.mk.BackendQuiz.exception.EntityType.*;
@@ -155,5 +154,21 @@ public class SaleOperationService {
 
     private RuntimeException exception(EntityType entityType, ExceptionType exceptionType, String... args) {
         return ExceptionManager.throwException(entityType, exceptionType, args);
+    }
+
+    public SalesReportDto saleReport(Date from, Date to) {
+        SalesReportDto salesReportDto = saleOperationRepository.findTotals(from, to);
+
+        salesReportDto.setTopSellingProducts(
+                new ArrayList<>(saleOperationRepository.findTopSellingProducts(from, to))
+        );
+        salesReportDto.setTopPerformingSellers(
+                saleOperationRepository.findTopPerformingSellers(from, to)
+                        .stream()
+                        .limit(5)
+                        .collect(Collectors.toList())
+        );
+
+        return salesReportDto;
     }
 }

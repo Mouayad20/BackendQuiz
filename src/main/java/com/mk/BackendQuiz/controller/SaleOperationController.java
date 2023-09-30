@@ -8,12 +8,14 @@ import com.mk.BackendQuiz.service.SaleOperationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.PaginationUtil;
 
 import javax.validation.Valid;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -41,4 +43,12 @@ public class SaleOperationController {
     public Response updateSaleOperation(@RequestBody SaleOperationDto saleOperationDto) {
         return Response.ok().setPayload(saleOperationService.updateSaleOperation(saleOperationDto));
     }
+
+    @GetMapping(value = "/report")
+    public Response saleReport(
+            @RequestParam("from") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date from,
+            @RequestParam("to") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date to) {
+        return Response.ok().setPayload(saleOperationService.saleReport(from, to));
+    }
+
 }

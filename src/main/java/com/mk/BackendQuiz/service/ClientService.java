@@ -1,6 +1,7 @@
 package com.mk.BackendQuiz.service;
 
 import com.mk.BackendQuiz.dto.Client.ClientDto;
+import com.mk.BackendQuiz.dto.Reporting.ClientReportDto;
 import com.mk.BackendQuiz.exception.EntityType;
 import com.mk.BackendQuiz.exception.ExceptionManager;
 import com.mk.BackendQuiz.exception.ExceptionType;
@@ -15,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.mail.MessagingException;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static com.mk.BackendQuiz.exception.EntityType.CLIENT;
 import static com.mk.BackendQuiz.exception.ExceptionType.*;
@@ -86,4 +88,17 @@ public class ClientService {
         return ExceptionManager.throwException(entityType, exceptionType, args);
     }
 
+    public ClientReportDto clientReport() {
+        ClientReportDto clientReportDto = new ClientReportDto();
+        clientReportDto.setTotalNumberOfClients(clientRepository.count());
+        clientReportDto.setTopSpendingClients(
+                clientRepository
+                        .findTopSpendingClients()
+                        .stream()
+                        .limit(5)
+                        .map(client -> modelMapper.map(client, ClientDto.class))
+                        .collect(Collectors.toList())
+        );
+        return clientReportDto;
+    }
 }

@@ -45,4 +45,10 @@ public class ProductController {
     public Response deleteProduct(@RequestParam(name = "id") Long id) {
         return Response.ok().setPayload(productService.deleteProduct(id));
     }
+
+    @GetMapping(value = "/report")
+    public Response productReport() {
+        return Response.ok().setPayload(productService.productReport());
+    }
+
 }

@@ -19,4 +19,22 @@ public class ProductFetchDto {
     private Double price;
     private Date creationData;
     private Long availableQuantity;
+
+    public ProductFetchDto(
+            Long id,
+            String name,
+            String category,
+            String description,
+            Double price,
+            Date creationData,
+            Long availableQuantity
+    ) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.description = description;
+        this.price = price;
+        this.creationData = creationData;
+        this.availableQuantity = availableQuantity;
+    }
 }
