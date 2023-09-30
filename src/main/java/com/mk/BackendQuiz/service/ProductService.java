@@ -1,5 +1,6 @@
 package com.mk.BackendQuiz.service;
 
+import com.mk.BackendQuiz.controller.ProductController;
 import com.mk.BackendQuiz.dto.Product.ProductCreateDto;
 import com.mk.BackendQuiz.dto.Product.ProductDto;
 import com.mk.BackendQuiz.dto.Product.ProductFetchDto;
@@ -14,6 +15,8 @@ import com.mk.BackendQuiz.repository.ClientRepository;
 import com.mk.BackendQuiz.repository.ProductRepository;
 import com.mk.BackendQuiz.security.JwtTokenUtil;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -29,6 +32,8 @@ import static com.mk.BackendQuiz.exception.ExceptionType.ENTITY_NOT_FOUND;
 
 @Service
 public class ProductService {
+
+    private static final Logger logger = LoggerFactory.getLogger(ProductService.class);
     @Autowired
     private ProductRepository productRepository;
     @Autowired
@@ -39,14 +44,18 @@ public class ProductService {
     private ClientRepository clientRepository;
 
     public Page<ProductFetchDto> fetchProducts(Pageable pageable) {
+        logger.info("fetch all products. ");
         return productRepository.findAll(pageable).map(product -> modelMapper.map(product, ProductFetchDto.class));
     }
 
     public ProductDto createProduct(ProductCreateDto productCreateDto, String token) {
+
         String email = jwtTokenUtil.getEmailFromToken(token.substring(7));
         Optional<Client> client = clientRepository.findByEmail(email);
         if (client.isEmpty())
             throw exception(CLIENT, ENTITY_NOT_FOUND, email);
+
+        logger.info("client with email " + email + " Add a product " + productCreateDto.getName());
 
         Product product = modelMapper.map(productCreateDto, Product.class);
         product.setPublisher(client.get());
@@ -65,6 +74,8 @@ public class ProductService {
         if (product.isEmpty())
             throw exception(PRODUCT, ENTITY_NOT_FOUND, "updated");
 
+        logger.info("product  " + product.get().getName() + " updating.. ");
+
         if (productUpdateDto.getName() != null)
             product.get().setName(productUpdateDto.getName());
         if (productUpdateDto.getCategory() != null)
@@ -81,6 +92,7 @@ public class ProductService {
 
     @Transactional
     public Boolean deleteProduct(Long id) {
+        logger.info("product with id " + id + " deleting.. ");
         Optional<Product> product = productRepository.findById(id);
         if (product.isEmpty())
             throw exception(PRODUCT, ENTITY_NOT_FOUND, "deleted");
@@ -91,6 +103,7 @@ public class ProductService {
     }
 
     public ProductReportDto productReport() {
+        logger.info("product reporting.. ");
         ProductReportDto productReportDto = new ProductReportDto();
         productReportDto.setInventoryStatus(productRepository.findInventoryStatus());
         productReportDto.setPriceAnalysis(productRepository.findPriceAnalysis());

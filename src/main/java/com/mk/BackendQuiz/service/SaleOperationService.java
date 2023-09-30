@@ -18,6 +18,8 @@ import com.mk.BackendQuiz.repository.SaleOperationRepository;
 import com.mk.BackendQuiz.repository.TransactionRepository;
 import com.mk.BackendQuiz.security.JwtTokenUtil;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -32,6 +34,9 @@ import static com.mk.BackendQuiz.exception.ExceptionType.ENTITY_NOT_FOUND;
 
 @Service
 public class SaleOperationService {
+
+    private static final Logger logger = LoggerFactory.getLogger(SaleOperationService.class);
+
     @Autowired
     private SaleOperationRepository saleOperationRepository;
     @Autowired
@@ -46,6 +51,7 @@ public class SaleOperationService {
     private TransactionRepository transactionRepository;
 
     public Page<SaleOperationFetchDto> fetchSaleOperations(Pageable pageable) {
+        logger.info("fetch all sales operations.. ");
         return saleOperationRepository
                 .findAll(pageable)
                 .map(saleOperation ->
@@ -95,6 +101,11 @@ public class SaleOperationService {
         );
 
         saleOperation.getTransactions().forEach(transaction -> transaction.setSaleOperation(saleOperation));
+
+        logger.info("create sale operation between  seller " +
+                saleOperation.getSeller().getName() +
+                " and client " + saleOperation.getClient().getName() +
+                " with total : " + saleOperation.getTotal());
 
         return modelMapper.map(saleOperationRepository.save(saleOperation), SaleOperationDto.class);
     }
@@ -149,6 +160,11 @@ public class SaleOperationService {
 
                 });
 
+        logger.info("update sale operation between  seller " +
+                saleOperation.get().getSeller().getName() +
+                " and client " + saleOperation.get().getClient().getName() +
+                " with total : " + saleOperation.get().getTotal());
+
         return modelMapper.map(saleOperationRepository.save(saleOperation.get()), SaleOperationDto.class);
     }
 
@@ -157,6 +173,7 @@ public class SaleOperationService {
     }
 
     public SalesReportDto saleReport(Date from, Date to) {
+        logger.info("sale operations reporting");
         SalesReportDto salesReportDto = saleOperationRepository.findTotals(from, to);
 
         salesReportDto.setTopSellingProducts(

@@ -8,6 +8,8 @@ import com.mk.BackendQuiz.exception.ExceptionType;
 import com.mk.BackendQuiz.model.Client;
 import com.mk.BackendQuiz.repository.ClientRepository;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -23,6 +25,9 @@ import static com.mk.BackendQuiz.exception.ExceptionType.*;
 
 @Service
 public class ClientService {
+
+    private static final Logger logger = LoggerFactory.getLogger(ClientService.class);
+
     @Autowired
     private ClientRepository clientRepository;
     @Autowired
@@ -31,11 +36,13 @@ public class ClientService {
     private ModelMapper modelMapper;
 
     public Page<ClientDto> fetchClients(Pageable pageable) {
+        logger.info("fetch all clients.");
         return clientRepository.findAll(pageable).map(client -> modelMapper.map(client, ClientDto.class));
 
     }
 
     public ClientDto updateClient(ClientDto clientDto) {
+        logger.info("client with email " + clientDto.getEmail() + " trying to update information. ");
         Optional<Client> client = clientRepository.findById(clientDto.getId());
         if (client.isEmpty())
             throw exception(CLIENT, ENTITY_NOT_FOUND, "");
@@ -75,6 +82,7 @@ public class ClientService {
 
     @Transactional
     public Boolean deleteClient(Long id) {
+        logger.info("client with id " + id + " trying to delete account. ");
         Optional<Client> client = clientRepository.findById(id);
         if (client.isEmpty())
             throw exception(CLIENT, ENTITY_NOT_FOUND, "");
@@ -89,6 +97,7 @@ public class ClientService {
     }
 
     public ClientReportDto clientReport() {
+        logger.info("client reporting... ");
         ClientReportDto clientReportDto = new ClientReportDto();
         clientReportDto.setTotalNumberOfClients(clientRepository.count());
         clientReportDto.setTopSpendingClients(

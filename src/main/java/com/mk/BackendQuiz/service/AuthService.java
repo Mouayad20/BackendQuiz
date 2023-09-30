@@ -1,5 +1,6 @@
 package com.mk.BackendQuiz.service;
 
+import com.mk.BackendQuiz.controller.ClientController;
 import com.mk.BackendQuiz.dto.Client.ClientAuthDto;
 import com.mk.BackendQuiz.dto.Client.ClientCreateDto;
 import com.mk.BackendQuiz.dto.JwtResponse;
@@ -11,6 +12,8 @@ import com.mk.BackendQuiz.repository.ClientRepository;
 import com.mk.BackendQuiz.security.JwtTokenUtil;
 import liquibase.repackaged.org.apache.commons.lang3.RandomStringUtils;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -32,6 +35,9 @@ import static com.mk.BackendQuiz.exception.ExceptionType.ENTITY_EXCEPTION;
 
 @Service
 public class AuthService implements UserDetailsService {
+
+    private static final Logger logger = LoggerFactory.getLogger(AuthService.class);
+
     @Autowired
     private ClientRepository clientRepository;
     @Autowired
@@ -48,6 +54,7 @@ public class AuthService implements UserDetailsService {
     private UserDetailsService jwtInMemoryUserDetailsService;
 
     public ClientCreateDto register(ClientCreateDto clientCreateDto) {
+        logger.info("client with email " + clientCreateDto.getEmail() + " trying to register. ");
         if (clientRepository.findByMobile(clientCreateDto.getMobile()).isPresent())
             throw exception(CLIENT, DUPLICATE_ENTITY, " Mobile " + clientCreateDto.getMobile());
         if (clientRepository.findByEmail(clientCreateDto.getEmail()).isEmpty()) {
@@ -93,6 +100,7 @@ public class AuthService implements UserDetailsService {
     }
 
     public Boolean setPassword(ClientAuthDto clientAuthDto) {
+        logger.info("client with email " + clientAuthDto.getEmail() + " trying to change password. ");
         Optional<Client> client = clientRepository.findByEmail(clientAuthDto.getEmail());
         if (client.isEmpty())
             throw exception(CLIENT, ENTITY_NOT_FOUND, clientAuthDto.getEmail());
@@ -119,6 +127,7 @@ public class AuthService implements UserDetailsService {
     }
 
     public JwtResponse authenticate(ClientAuthDto clientAuthDto) {
+        logger.info("client with email " + clientAuthDto.getEmail() + " trying to authenticate. ");
 
         if (clientAuthDto.getEmail() == null || clientAuthDto.getPassword() == null)
             throw exception(CLIENT, ENTITY_EXCEPTION, "Email Or Password is Null");
